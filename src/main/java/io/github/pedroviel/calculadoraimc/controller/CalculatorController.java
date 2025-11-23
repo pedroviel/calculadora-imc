@@ -38,6 +38,16 @@ public class CalculatorController implements Initializable {
             double height = parseDouble(heightText);
             double weight = parseDouble(weightText);
 
+            if(height <= 0 || weight <= 0) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("ERRO");
+                alert.setHeaderText("Valor inválido");
+                alert.setContentText("A altura e o peso, devem ser maiores do que 0");
+                alert.show();
+
+                return;
+            }
+
             Person person = new Person();
 
             person.setWeight(weight);
@@ -56,7 +66,7 @@ public class CalculatorController implements Initializable {
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERRO");
-            alert.setHeaderText("Valores inválidos");
+            alert.setHeaderText("Valor inválido");
             alert.setContentText("Por favor, insira valores numéricos para o peso e altura!");
             alert.show();
         }
