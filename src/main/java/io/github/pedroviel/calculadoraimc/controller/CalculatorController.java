@@ -42,7 +42,7 @@ public class CalculatorController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("ERRO");
                 alert.setHeaderText("Valor inválido");
-                alert.setContentText("A altura e o peso, devem ser maiores do que 0");
+                alert.setContentText("A altura e o peso, devem ser maiores do que 0!");
                 alert.show();
 
                 return;
