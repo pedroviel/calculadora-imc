@@ -38,7 +38,7 @@ public class CalculatorController implements Initializable {
             double height = parseDouble(heightText);
             double weight = parseDouble(weightText);
 
-            if(height <= 0 || weight <= 0) {
+            if (height <= 0 || weight <= 0) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("ERRO");
                 alert.setHeaderText("Valor inválido");
