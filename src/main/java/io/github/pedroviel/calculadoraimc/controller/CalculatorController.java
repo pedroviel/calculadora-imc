@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,6 +15,9 @@ import java.util.ResourceBundle;
 import static java.lang.Double.parseDouble;
 
 public class CalculatorController implements Initializable {
+
+    @FXML
+    private Pane rootPane;
 
     @FXML
     private Button calculateBtn;
@@ -26,6 +30,24 @@ public class CalculatorController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        heightField.setPromptText("Ex.: 1,75 ou 1.75");
+        weightField.setPromptText("Ex.: 70,2 ou 70.2");
+
+        weightField.setOnAction(event -> {
+            if(heightField.getText().isBlank()) {
+                heightField.requestFocus();
+            } else {
+                calculateBtn.fire();
+            }
+        });
+        heightField.setOnAction(event -> {
+            if(weightField.getText().isBlank()) {
+                weightField.requestFocus();
+            } else {
+                calculateBtn.fire();
+            }
+        });
+
     }
 
     @FXML
