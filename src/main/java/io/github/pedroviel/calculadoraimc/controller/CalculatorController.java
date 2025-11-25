@@ -15,10 +15,6 @@ import java.util.ResourceBundle;
 import static java.lang.Double.parseDouble;
 
 public class CalculatorController implements Initializable {
-
-    @FXML
-    private Pane rootPane;
-
     @FXML
     private Button calculateBtn;
 
@@ -34,14 +30,14 @@ public class CalculatorController implements Initializable {
         weightField.setPromptText("Ex.: 70,2 ou 70.2");
 
         weightField.setOnAction(event -> {
-            if(heightField.getText().isBlank()) {
+            if (heightField.getText().isBlank()) {
                 heightField.requestFocus();
             } else {
                 calculateBtn.fire();
             }
         });
         heightField.setOnAction(event -> {
-            if(weightField.getText().isBlank()) {
+            if (weightField.getText().isBlank()) {
                 weightField.requestFocus();
             } else {
                 calculateBtn.fire();
