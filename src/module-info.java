@@ -3,7 +3,7 @@ module calculadora.imc {
     requires javafx.graphics;
     requires javafx.controls;
 
-    opens io.github.pedroviel.calculadoraimc to javafx.fxml;
-    opens io.github.pedroviel.calculadoraimc.controller to javafx.fxml;
-    exports io.github.pedroviel.calculadoraimc to javafx.graphics;
+    opens calculadoraimc to javafx.fxml;
+    opens calculadoraimc.controller to javafx.fxml;
+    exports calculadoraimc to javafx.graphics;
 }
